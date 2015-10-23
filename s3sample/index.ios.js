@@ -6,21 +6,19 @@
 
 var React = require('react-native');
 var Button = require('react-native-button');
-var AWS = require('./lib/aws-sdk.min.js');
-console.log("AWS is equal to this: ",AWS);
-//var s3 = new AWS.S3();
-//var s3 = new AWS.S3({region: 'ap-southeast-2', maxRetries: 15});
+
 
 var {
   AppRegistry,
   StyleSheet,
   Text,
+  Component,
   View,
   button
 
 } = React;
 
-var s3sample = React.createClass({
+class s3sample extends Component {
 
 handlePressUpload()
 {
@@ -34,16 +32,17 @@ handlePressTakePicture()
 
 handlePressGallery()
 {
-  
+
 }
 
 
-render: function() {
+
+
+
+render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Click below for image upload
-        </Text>
+
         <Button style={styles.button1} onPress={this.handlePressUpload()}>
           Upload
         </Button>
@@ -51,12 +50,12 @@ render: function() {
           Take Picture
         </Button>
         <Button style={styles.button3} onPress={this.handlePressGallery()}>
-          Choose from Gallery
+          Gallery
         </Button>
       </View>
     );
   }
-});
+}
 
 var styles = StyleSheet.create({
   container: {
@@ -65,20 +64,10 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
   button3:
   {
     color: 'red',
-    padding:100,
+    padding:50,
 
 
   },
